@@ -1,103 +1,149 @@
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
+
+const projects = [
+  {
+    title: 'Supplements',
+    description:
+      'Our supplements are carefully crafted to support your wellness journey, offering a wide range of products designed to improve overall health, enhance performance, and promote recovery. Whether you\'re looking to boost your energy, build muscle, or improve your immune system, we have a supplement tailored to your needs.',
+    link: 'https://supplements-gmq6.vercel.app/',
+  },
+  {
+    title: 'Mositiq',
+    description:
+      'Mositiq is a sleek and responsive e-commerce website specializing in high-quality lip care products, including lip gloss, balms, and tints. Built using React and Firebase, the platform offers a smooth and user-friendly shopping experience..',
+    link: 'https://moistiq-lipglow.vercel.app/',
+  },
+  {
+    title: 'Tour- Travel',
+    description:
+      'Tour-Travel is a full-stack blog application designed to share and discover travel experiences. Built with a robust back-end and a sleek front-end, this platform allows users to log in, write, and share travel blogs with the world. The app supports markdown for easy and rich content creation.',
+    link: '#',
+  },
+];
+
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="font-sans scroll-smooth">
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Hero Section with Text on Left, Image on Right */}
+      <section
+        id="hero"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-white px-6 md:px-16"
+      >
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-6xl gap-12">
+
+          {/* Left - Text */}
+          <motion.div
+            className="text-center md:text-left flex-1"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h1 className="text-4xl md:text-8xl font-bold text-gray-800">
+              Hi, I'm Sonali 👋
+            </h1>
+            <p className="mt-4 text-s text-gray-600">
+              Full Stack Developer | Python | React | Next.js
+            </p>
+            <a
+              href="#projects"
+              className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+            >
+              See My Work
+            </a>
+          </motion.div>
+
+          {/* Right - Image */}
+          <motion.div
+            className="flex-1 flex justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Read our docs
-          </a>
+            <div className="w-64 h-64 rounded-full overflow-hidden shadow-lg">
+              <Image
+                src="/me.jpg"
+                alt="Sonali"
+                width={356}
+                height={356}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </motion.div>
+
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      <section id="about" className="py-20 px-6 md:px-16 bg-white">
+        <motion.div
+          className="max-w-3xl mx-auto text-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
+          <p className="mt-6 text-gray-600 leading-relaxed text-lg">
+            I'm a passionate full stack developer who thrives on building beautiful and functional web applications. With experience in Python, JavaScript, React, and Next.js, I enjoy solving problems and crafting intuitive user experiences. I believe in writing clean, maintainable code and continuously learning new tools and technologies to improve my craft.
+          </p>
+        </motion.div>
+      </section>
+
+     {/* ProjectSEction */ }
+      <section id="projects" className="py-20 px-6 md:px-16 bg-gray-50 text-center">
+        <motion.h2
+          className="text-4xl font-bold text-gray-800"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          Projects
+        </motion.h2>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-xl shadow-md p-6 text-left hover:shadow-xl transition"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
+            >
+              <h3 className="text-2xl font-semibold text-gray-800">{project.title}</h3>
+              <p className="mt-3 text-gray-600">{project.description}</p>
+              <a
+                href={project.link}
+                className="text-blue-600 mt-4 inline-block hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project →
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-8 bg-white text-center">
+        <h2 className="text-3xl font-semibold text-gray-800">Contact Me</h2>
+        <p className="mt-4 text-gray-600">
+          You can reach me at <a href="mailto:your@email.com" className="text-blue-600">aswalmansi1680@gmail.com</a>
+        </p>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 bg-gray-100 text-center text-sm text-gray-500">
+        © 2025 Sonali Aswal. All rights reserved.
       </footer>
-    </div>
+    </main>
   );
 }
