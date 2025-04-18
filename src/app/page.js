@@ -112,7 +112,7 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
           <p className="mt-6 text-gray-600 leading-relaxed text-lg">
-            {`I'm a passionate full stack developer who thrives on building beautiful and functional web applications. With experience in Python, JavaScript, React, and Next.js, I enjoy solving problems and crafting intuitive user experiences. I believe in writing clean, maintainable code and continuously learning new tools and technologies to improve my craft.`}
+            {`I'm a passionate web developer who thrives on building beautiful and functional web applications. With experience in Python, JavaScript, React, and Next.js, I enjoy solving problems and crafting intuitive user experiences. I believe in writing clean, maintainable code and continuously learning new tools and technologies to improve my craft.`}
           </p>
         </motion.div>
       </section>
