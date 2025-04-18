@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiMongodb, SiFirebase, SiExpress } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaGitAlt} from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss,SiDjango , SiExpress } from 'react-icons/si';
 import Navbar from '../components/Navbar';
 
 const projects = [
@@ -35,6 +35,8 @@ const skills = [
   { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-4xl text-sky-400" /> },
   { name: 'Python', icon: <FaPython className="text-4xl text-blue-500" /> },
   { name: 'Git & GitHub', icon: <FaGitAlt className="text-4xl text-red-500" /> },
+  {name: 'Django',
+    icon: <SiDjango className="text-4xl text-green-700" />}
 ];
 
 
@@ -45,52 +47,58 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-        id="hero"
-        className="min-h-screen flex items-center justify-center px-6 md:px-16"
-      >
-        <div className="flex flex-col items-center justify-center w-full max-w-4xl gap-10 text-center">
+  id="hero"
+  className="min-h-screen flex items-center justify-center px-6 md:px-16"
+>
+  <div className="flex flex-col items-center justify-center w-full max-w-4xl gap-10 text-center">
 
-          {/* Top - Image */}
-          <motion.div
-            className="flex justify-center"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
-              <Image
-                src="/me.jpg"
-                alt="Sonali"
-                width={356}
-                height={356}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </motion.div>
+    {/* Top - Image */}
+    <motion.div
+      className="flex justify-center"
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
+        <Image
+          src="/me.jpg"
+          alt="Sonali"
+          width={356}
+          height={356}
+          className="object-cover w-full h-full"
+        />
+      </div>
+    </motion.div>
 
-          {/* Bottom - Text */}
-          <motion.div
-            className="flex-1"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-3xl md:text-6xl font-bold text-gray-800">
-              {`Hi, I'm Sonali `}
-            </h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Front End Developer 
-            </p>
-            <a
-              href="#projects"
-              className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-            >
-              See My Work
-            </a>
-          </motion.div>
+    {/* Bottom - Text */}
+    <motion.div
+      className="flex-1"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1 className="text-3xl md:text-6xl font-bold text-gray-800">
+        {`Hi, I'm Sonali `}
+      </h1>
+      <p className="mt-4 text-lg text-gray-600">
+        Front End Developer 
+      </p>
+      <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="#projects"
+          className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+        >
+          See My Work
+        </a>
+        <a href="/Sonali_Aswal.pdf" download className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition">
+          Download Resume
+        </a>
 
-        </div>
-      </section>
+      </div>
+    </motion.div>
+
+  </div>
+</section>
 
       {/* About Section */}
       <section id="about" className="py-20 px-6 md:px-16 bg-white">
