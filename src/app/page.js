@@ -24,14 +24,12 @@ const projects = [
   },
 ];
 
-
-
 export default function Home() {
   return (
     <main className="font-sans scroll-smooth">
       <Navbar />
 
-      {/* Hero Section with Text on Left, Image on Right */}
+      {/* Hero Section */}
       <section
         id="hero"
         className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-white px-6 md:px-16"
@@ -46,7 +44,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-8xl font-bold text-gray-800">
-              Hi, I'm Sonali 👋
+              {`Hi, I'm Sonali 👋`}
             </h1>
             <p className="mt-4 text-s text-gray-600">
               Full Stack Developer | Python | React | Next.js
@@ -80,6 +78,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
       <section id="about" className="py-20 px-6 md:px-16 bg-white">
         <motion.div
           className="max-w-3xl mx-auto text-center"
@@ -90,12 +89,12 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
           <p className="mt-6 text-gray-600 leading-relaxed text-lg">
-            I'm a passionate full stack developer who thrives on building beautiful and functional web applications. With experience in Python, JavaScript, React, and Next.js, I enjoy solving problems and crafting intuitive user experiences. I believe in writing clean, maintainable code and continuously learning new tools and technologies to improve my craft.
+            {`I'm a passionate full stack developer who thrives on building beautiful and functional web applications. With experience in Python, JavaScript, React, and Next.js, I enjoy solving problems and crafting intuitive user experiences. I believe in writing clean, maintainable code and continuously learning new tools and technologies to improve my craft.`}
           </p>
         </motion.div>
       </section>
 
-     {/* ProjectSEction */ }
+      {/* Projects Section */}
       <section id="projects" className="py-20 px-6 md:px-16 bg-gray-50 text-center">
         <motion.h2
           className="text-4xl font-bold text-gray-800"
@@ -136,7 +135,10 @@ export default function Home() {
       <section id="contact" className="py-20 px-8 bg-white text-center">
         <h2 className="text-3xl font-semibold text-gray-800">Contact Me</h2>
         <p className="mt-4 text-gray-600">
-          You can reach me at <a href="mailto:your@email.com" className="text-blue-600">aswalmansi1680@gmail.com</a>
+          You can reach me at{' '}
+          <a href="mailto:aswalmansi1680@gmail.com" className="text-blue-600">
+            aswalmansi1680@gmail.com
+          </a>
         </p>
       </section>
 
