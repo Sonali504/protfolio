@@ -46,39 +46,18 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-white px-6 md:px-16"
+        className="min-h-screen flex items-center justify-center px-6 md:px-16"
       >
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-6xl gap-12">
+        <div className="flex flex-col items-center justify-center w-full max-w-4xl gap-10 text-center">
 
-          {/* Left - Text */}
+          {/* Top - Image */}
           <motion.div
-            className="text-center md:text-left flex-1"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="flex justify-center"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-8xl font-bold text-gray-800">
-              {`Hi, I'm Sonali 👋`}
-            </h1>
-            <p className="mt-4 text-s text-gray-600">
-              Full Stack Developer | Python | React | Next.js
-            </p>
-            <a
-              href="#projects"
-              className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-            >
-              See My Work
-            </a>
-          </motion.div>
-
-          {/* Right - Image */}
-          <motion.div
-            className="flex-1 flex justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="w-64 h-64 rounded-full overflow-hidden shadow-lg">
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
               <Image
                 src="/me.jpg"
                 alt="Sonali"
@@ -87,6 +66,27 @@ export default function Home() {
                 className="object-cover w-full h-full"
               />
             </div>
+          </motion.div>
+
+          {/* Bottom - Text */}
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-3xl md:text-6xl font-bold text-gray-800">
+              {`Hi, I'm Sonali `}
+            </h1>
+            <p className="mt-4 text-lg text-gray-600">
+              Front End Developer 
+            </p>
+            <a
+              href="#projects"
+              className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+            >
+              See My Work
+            </a>
           </motion.div>
 
         </div>
@@ -111,7 +111,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-6 md:px-16 bg-gray-50 text-center">
         <motion.h2
-          className="text-4xl font-bold text-gray-800"
+          className="text-4xl font-bold text-gray-800 uppercase"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -148,7 +148,7 @@ export default function Home() {
       {/*Skills */}
       <section id="skills" className="py-20 px-6 bg-white text-center">
         <motion.h2
-          className="text-3xl font-semibold text-gray-800"
+          className="text-3xl font-bold text-gray-800 uppercase"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -169,7 +169,7 @@ export default function Home() {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="bg-gray-50 hover:bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300 flex flex-col items-center justify-center"
+              className="bg-gray-50 hover:bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300 flex flex-col items-center justify-center min-h-[150px]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.07, duration: 0.4 }}
@@ -184,7 +184,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-8 bg-white text-center">
-        <h2 className="text-3xl font-semibold text-gray-800">Contact Me</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 uppercase">Contact Me</h2>
         <p className="mt-4 text-gray-600">
           You can reach me at{' '}
           <a href="mailto:aswalmansi1680@gmail.com" className="text-blue-600">
