@@ -82,7 +82,7 @@ export default function Home() {
               {`Hi, I'm Sonali `}
             </h1>
             <p className="mt-4 text-lg text-gray-600">
-              Front End Developer 
+             Web Developer 
             </p>
             <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
               <a
