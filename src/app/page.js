@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiMongodb, SiFirebase, SiExpress } from 'react-icons/si';
 import Navbar from '../components/Navbar';
 
 const projects = [
@@ -23,6 +25,18 @@ const projects = [
     link: '#',
   },
 ];
+
+const skills = [
+  { name: 'HTML5', icon: <FaHtml5 className="text-4xl text-orange-600" /> },
+  { name: 'CSS3', icon: <FaCss3Alt className="text-4xl text-blue-600" /> },
+  { name: 'JavaScript', icon: <FaJs className="text-4xl text-yellow-500" /> },
+  { name: 'React.js', icon: <FaReact className="text-4xl text-cyan-500" /> },
+  { name: 'Next.js', icon: <SiNextdotjs className="text-4xl text-gray-900" /> },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-4xl text-sky-400" /> },
+  { name: 'Python', icon: <FaPython className="text-4xl text-blue-500" /> },
+  { name: 'Git & GitHub', icon: <FaGitAlt className="text-4xl text-red-500" /> },
+];
+
 
 export default function Home() {
   return (
@@ -126,6 +140,43 @@ export default function Home() {
               >
                 View Project →
               </a>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/*Skills */}
+      <section id="skills" className="py-20 px-6 bg-white text-center">
+        <motion.h2
+          className="text-3xl font-semibold text-gray-800"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          My Skills
+        </motion.h2>
+
+        <motion.p
+          className="mt-4 max-w-xl mx-auto text-gray-600"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          Technologies I use to build high-quality, fast, and modern web applications.
+        </motion.p>
+
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              className="bg-gray-50 hover:bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300 flex flex-col items-center justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.07, duration: 0.4 }}
+              viewport={{ once: true }}
+            >
+              {skill.icon}
+              <span className="mt-3 text-gray-800 font-medium">{skill.name}</span>
             </motion.div>
           ))}
         </div>
