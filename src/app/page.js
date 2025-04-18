@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaGitAlt} from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss,SiDjango , SiExpress } from 'react-icons/si';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 
 const projects = [
@@ -47,58 +48,58 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-  id="hero"
-  className="min-h-screen flex items-center justify-center px-6 md:px-16"
->
-  <div className="flex flex-col items-center justify-center w-full max-w-4xl gap-10 text-center">
+        id="hero"
+        className="min-h-screen flex items-center justify-center px-6 md:px-16"
+      >
+        <div className="flex flex-col items-center justify-center w-full max-w-4xl gap-10 text-center">
 
-    {/* Top - Image */}
-    <motion.div
-      className="flex justify-center"
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
-        <Image
-          src="/me.jpg"
-          alt="Sonali"
-          width={356}
-          height={356}
-          className="object-cover w-full h-full"
-        />
-      </div>
-    </motion.div>
+          {/* Top - Image */}
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
+              <Image
+                src="/me.jpg"
+                alt="Sonali"
+                width={356}
+                height={356}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </motion.div>
 
-    {/* Bottom - Text */}
-    <motion.div
-      className="flex-1"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <h1 className="text-3xl md:text-6xl font-bold text-gray-800">
-        {`Hi, I'm Sonali `}
-      </h1>
-      <p className="mt-4 text-lg text-gray-600">
-        Front End Developer 
-      </p>
-      <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-        <a
-          href="#projects"
-          className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-        >
-          See My Work
-        </a>
-        <a href="/Sonali_Aswal.pdf" download className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition">
-          Download Resume
-        </a>
+          {/* Bottom - Text */}
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-3xl md:text-6xl font-bold text-gray-800">
+              {`Hi, I'm Sonali `}
+            </h1>
+            <p className="mt-4 text-lg text-gray-600">
+              Front End Developer 
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="#projects"
+                className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+              >
+                See My Work
+              </a>
+              <a href="/Sonali_Aswal.pdf" download className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition">
+                Download Resume
+              </a>
 
-      </div>
-    </motion.div>
+            </div>
+          </motion.div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* About Section */}
       <section id="about" className="py-20 px-6 md:px-16 bg-white">
@@ -192,14 +193,39 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-8 bg-white text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 uppercase">Contact Me</h2>
-        <p className="mt-4 text-gray-600">
-          You can reach me at{' '}
-          <a href="mailto:aswalmansi1680@gmail.com" className="text-blue-600">
-            aswalmansi1680@gmail.com
-          </a>
-        </p>
-      </section>
+  <h2 className="text-3xl font-semibold text-gray-800 uppercase">Contact Me</h2>
+
+  <p className="mt-4 text-gray-600">
+    You can reach me at{' '}
+    <a href="mailto:aswalmansi1680@gmail.com" className="text-blue-600">
+      aswalmansi1680@gmail.com
+    </a>
+  </p>
+
+  <div className="mt-10 flex justify-center gap-10">
+    {/* GitHub */}
+    <a
+      href="https://github.com/Sonali504"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center text-gray-700 hover:text-blue-600 transition duration-300"
+    >
+      <FaGithub className="text-4xl" />
+      <span className="mt-2 text-sm">GitHub</span>
+    </a>
+
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/in/sonali-aswal-69510822a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_appe"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center text-gray-700 hover:text-blue-600 transition duration-300"
+    >
+      <FaLinkedin className="text-4xl" />
+      <span className="mt-2 text-sm">LinkedIn</span>
+    </a>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="py-6 bg-gray-100 text-center text-sm text-gray-500">
